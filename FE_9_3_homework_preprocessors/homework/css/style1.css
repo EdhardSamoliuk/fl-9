@@ -1,0 +1,138 @@
+html, body, p, h1, h2, h3 {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font: 100% Arial, Helvetica, sans-serif;
+  background-color: #FFFFFF; }
+
+.main-wrapper {
+  width: 75%;
+  margin: auto; }
+
+header {
+  height: 220px; }
+
+.logo img {
+  width: 300px;
+  height: 200px;
+  float: left; }
+
+nav {
+  float: right;
+  margin-top: 120px;
+  width: 600px;
+  padding: 10px 0;
+  border-top: 1px solid #617d8a;
+  border-bottom: 1px solid #617d8a;
+  text-align: center;
+  word-spacing: 100px; }
+  nav a {
+    color: #31b0d5;
+    text-transform: uppercase;
+    text-decoration: none; }
+    nav a:hover {
+      color: #617d8a; }
+
+.toolbar {
+  float: right;
+  margin-bottom: 20px;
+  margin-right: 20px; }
+  .toolbar input {
+    border: 1px solid #31b0d5;
+    text-align: left;
+    padding: 10px 0 10px 20px;
+    background-color: #FFFFFF; }
+    .toolbar input:active {
+      border: 1px solid #31b0d5; }
+    .toolbar input::placeholder {
+      color: #31b0d5; }
+
+.post-list {
+  clear: both; }
+
+article {
+  width: 47%;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 20px;
+  vertical-align: top;
+  background-color: #efefef; }
+  article img {
+    width: 100%; }
+
+.post-description {
+  color: #159587;
+  font-size: 12px;
+  padding: 10px 0;
+  margin: 0 20px;
+  border-bottom: 1px solid #617d8a; }
+
+h3 {
+  color: #1697a6;
+  margin: 5px 20px; }
+
+p {
+  color: #617d8a;
+  margin: 15px 20px;
+  font-size: 14px; }
+
+h1 {
+  color: #31b0d5;
+  margin-top: 60px;
+  text-align: right; }
+
+.about {
+  width: 100%; }
+  .about img {
+    width: 100%;
+    margin-top: 20px; }
+
+h4 {
+  color: #31b0d5;
+  text-align: right;
+  margin: 0; }
+
+form {
+  margin-top: 20px; }
+
+input, textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  border: 1px solid #617d8a; }
+
+input:active {
+  border: 1px solid #31b0d5; }
+
+textarea {
+  padding-right: 0;
+  padding-bottom: 40px; }
+  textarea:active {
+    border: 1px solid #31b0d5; }
+
+#message::placeholder, form input::placeholder {
+  color: #617d8a;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif; }
+
+#submit {
+  float: right;
+  margin-bottom: 20px;
+  width: 185px;
+  color: #FFFFFF;
+  font-size: 12px;
+  background-color: #31b0d5;
+  border: none; }
+  #submit:hover {
+    background-color: #efefef;
+    color: #617d8a;
+    border: 1px solid #617d8a; }
+
+footer {
+  clear: both;
+  color: #617d8a;
+  font-size: 8px;
+  margin-bottom: 5px; }

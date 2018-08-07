@@ -1,0 +1,168 @@
+html, body, p, h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 100% $fontFamily;
+  background-color: $backgroundColor;
+}
+
+.main-wrapper {
+  width: 75%;
+  margin: auto;
+}
+
+header {
+  height: 220px;
+}
+
+.logo img {
+  width: 300px;
+  height: 200px;
+  float: left;
+}
+
+nav {
+  float: right;
+  margin-top: 120px;
+  width: 600px;
+  padding: 10px 0;
+  border-top: 1px solid $borderColor;
+  border-bottom: 1px solid $borderColor;
+  text-align: center;
+  word-spacing: 100px;  
+  a {
+    color: $primaryColor;
+    text-transform: uppercase;
+    text-decoration: none;
+    &:hover {
+      color: $textColor;
+    }
+  }
+}
+
+.toolbar {
+  float: right;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  input {
+    border: 1px solid $primaryColor;
+    text-align: left;
+    padding: 10px 0 10px 20px;
+    background-color: $backgroundColor; 
+    &:active {
+      border: 1px solid $primaryColor;
+    }
+    &::placeholder {
+      color: $primaryColor;
+    }
+  }
+}
+.post-list {
+  clear: both; 
+}
+
+article {
+  width: 47%;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 20px;
+  vertical-align: top;
+  background-color: $articleColor;
+  img {
+    width: 100%;
+  }
+}
+
+.post-description {
+  color: $dateColor;
+  font-size: 12px;
+  padding: 10px 0;
+  margin: 0 20px;
+  border-bottom: 1px solid $borderColor;
+}
+
+h3 {
+  color: $articleHeading;
+  margin: 5px 20px;
+}
+
+p {
+  color: $textColor;
+  margin: 15px 20px;
+  font-size: 14px;
+}
+
+h1 {
+  color: $primaryColor;
+  margin-top: 60px;
+  text-align: right;
+}
+
+.about {
+  width: 100%;
+  img {
+  width: 100%;
+  margin-top: 20px;
+  }
+}
+
+h4 {
+  color: $primaryColor;
+  text-align: right;
+  margin: 0;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  border: 1px solid $borderColor;
+}
+
+input:active {
+  border: 1px solid $primaryColor;
+}
+
+textarea {
+  &:active {
+    border: 1px solid $primaryColor;
+  }
+  padding-right: 0;
+  padding-bottom: 40px;
+}
+
+#message::placeholder, form input::placeholder {
+  color: $textColor;
+  font-size: 12px;
+  font-family: $fontFamily;
+}
+
+#submit {
+  float: right;
+  margin-bottom: 20px;
+  width: 185px;
+  color: #FFFFFF;
+  font-size: 12px;
+  background-color: $primaryColor;
+  border: none;
+  &:hover {
+    background-color: $articleColor;
+    color: $textColor;
+    border: 1px solid $borderColor;
+  }
+}
+
+footer {
+  clear: both;
+  color: $textColor;
+  font-size: 8px;
+  margin-bottom: 5px;
+}
