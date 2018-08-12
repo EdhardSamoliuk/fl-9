@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    Padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+    overflow: auto;
+    font-size: 1em;
+}
+
+h1,
+h3,
+h4,
+h6 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h3,
+.about-left {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(183, 200, 217);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+button,
+.header,
+.main-nav a,
+.articles .article-items .article-img {
+    color: rgb(255, 255, 255);
+}
+
+button {
+    border: 2px solid rgb(255, 255, 255);
+    background: none;
+    cursor: pointer;
+}
+
+main,
+input::placeholder,
+footer h4,
+.footer-bottom .footer-nav a {
+    color: rgb(50, 52, 54);
+}
+
+.header,
+.articles .article-items .article-img {
+    position: relative;
+}
+
+.header img,
+.centered-header h1,
+.top-left-header h4,
+.footer-bottom .footer-nav,
+.articles .article-items .article-img img,
+.main-nav {
+    width: 100%;
+}
+
+.header img {
+    margin: 0 auto;
+}
+
+.centered-header,
+.articles .article-items .article-img:after {
+    position: absolute;
+}
+
+.centered-header,
+.header button {
+    transform: translate(-50%, -50%);
+}
+
+.centered-header,
+.articles .article-items .article-text,
+.articles .articles-header {
+    text-align: center;
+}
+
+.centered-header,
+.header button {
+    left: 50%;
+}
+
+.centered-header {
+    top: 50%;
+}
+
+.centered-header span {
+    font-size: 2em;
+}
+
+.centered-header h1,
+.top-left-header h4 {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.top-left-header,
+.header button,
+.main-nav,
+.articles .article-items .article-img button,
+.articles .article-items .article-img h6 {
+    position: absolute;
+}
+
+.top-left-header,
+.main-nav {
+    top: 10%;
+}
+
+.top-left-header {
+    left: 5%;
+}
+
+.header button,
+.articles .article-items .article-imgbutton {
+    background: rgba(50, 52, 54, 0.5);
+}
+
+.header button {
+    padding: 1% 5% 1% 5%;
+    bottom: 10%;
+}
+
+.header button:hover,
+.articles .article-items .article-img button:hover,
+.email-form .input-email button,
+.footer-column .column-item .email-footer button {
+    background: rgb(50, 52, 54);
+}
+
+.main-nav,
+.footer-bottom .footer-nav {
+    text-align: right;
+}
+
+.main-nav {
+    right: 5%;
+}
+
+.main-nav a,
+.about,
+.articles,
+footer {
+    padding-left: 5%;
+}
+
+.about,
+.articles,
+footer {
+    padding-right: 5%;
+}
+
+.about,
+.articles .article-items .article-france,
+.articles .article-items .article-america,
+.email-form .input-email,
+.footer-column,
+.footer-column .column-item .email-footer,
+.footer-bottom {
+    display: flex;
+}
+
+.about {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.about-left,
+.about-right,
+.footer-bottom p,
+.footer-bottom .footer-nav a {
+    flex: 50%;
+}
+
+.articles,
+.email-form .input-email input,
+.footer-column .column-item .email-footer input,
+hr {
+    background: rgb(240, 240, 240);
+}
+
+.articles .articles-header,
+.footer-column {
+    padding-top: 10%;
+}
+
+.articles .articles-header {
+    padding-bottom: 5%;
+}
+
+.articles .article-items .article-france,
+.articles .article-items .article-america,
+.email-form .input-email {
+    align-items: center;
+}
+
+.articles .article-items .article-france,
+.articles .article-items .article-america {
+    margin-top: 1%;
+}
+
+.articles .article-items .article-america,
+.footer-bottom .footer-nav a {
+    flex-direction: row-reverse;
+}
+
+.articles .article-items .article-img {
+    flex: 60%;
+}
+
+.articles .article-items .article-img:after {
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: radial-gradient(circle, transparent 50%, rgb(0, 0, 0) 180%);
+}
+
+.article-img:after {
+    height: 98.5%;
+}
+
+.articles .article-items .article-img button,
+.articles .article-items .article-img h6 {
+    z-index: 3;
+}
+
+.articles .article-items .article-img button,
+.email-form .input-email input,
+.email-form .input-email button,
+.footer-column .column-item .email-footer input,
+.footer-column .column-item .email-footer button {
+    padding: 1%;
+}
+
+.articles .article-items .article-img button {
+    top: 5%;
+    right: 2%;
+}
+
+.articles .article-items .article-img h6 {
+    left: 2%;
+    bottom: 5%;
+}
+
+.articles .article-items .article-text {
+    flex: 40%;
+}
+
+.articles .email-form {
+    background: rgb(255, 255, 255);
+    margin-top: 4%;
+    margin-bottom: 4%;
+    padding: 3% 2% 3% 2%;
+}
+
+.email-form .input-email h3,
+.footer-column .column-item {
+    flex: 25%;
+}
+
+.email-form .input-email input,
+.footer-column .column-item .email-footer input {
+    border: 1px solid rgb(50, 52, 54);
+}
+
+.email-form .input-email input {
+    flex: 55%;
+}
+
+.email-form .input-email button,
+.footer-column .column-item .email-footer button {
+    border: 3px solid rgb(50, 52, 54);
+}
+
+.email-form .input-email button {
+padding: 1.55%;
+    flex: 10%;
+}
+
+.email-form .input-email button:hover,
+.footer-column .column-item .email-footer button:hover {
+    opacity: 0.5;
+}
+
+footer {
+    color: rgb(164, 164, 164);
+}
+
+.footer-column {
+    padding-bottom: 10%;
+}
+
+.footer-column .column-item p,
+.footer-column .column-item .email-footer {
+    padding-top: 2%;
+}
+
+.footer-column .column-item:nth-of-type(2) p {
+    font-style: italic;
+}
+
+.footer-column .column-item:nth-of-type(2) p:last-child {
+    color: rgb(240, 240, 240);
+    font-style: normal;
+    font-weight: bold;
+}
+
+.footer-column .column-item .email-footer input {
+    flex: 70%;
+}
+
+.footer-column .column-item .email-footer button {
+    flex: 30%;
+}
+
+.footer-bottom {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.footer-bottom .footer-nav a {
+    padding-left: 3%;
+}
+
+hr {
+    height: 2px;
+    border: none;
+}
+
+.article-img {
+    cursor: pointer;
+}
+
+.article-text{
+   box-sizing: border-box;
+    padding: 15px;
+/*    color: red;*/
+}

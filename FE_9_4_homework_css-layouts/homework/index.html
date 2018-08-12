@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Layouts</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans">
+</head>
+<body>
+    
+  <header class="header">
+    <img src="img/apples.jpg" alt="Apples" />
+    <div class="centered-header">
+      <h1>Black <span>&amp;</span> White</h1>
+      <p>An Original Brand Since 1965</p>
+    </div>
+    <div class="top-left-header">
+      <h4>Black &amp; White</h4>
+    </div>
+    <button type="button" onclick="#">Show more</button>
+    <nav class="main-nav">
+       <a href="#" class="main-nav-item">Home</a>
+       <a href="#" class="main-nav-item">About</a>
+       <a href="#" class="main-nav-item">Vacancies</a>
+       <a href="#" class="main-nav-item">Shop</a>
+    </nav>
+  </header>
+    
+  <main>
+      
+    <section class="about">
+      <div class="about-left">
+        <p>Lorem ipsum dolor consectetur adipiscing.<br>Mauris <b>eu eros</b> eget lacus.</p>
+      </div>
+      <div class="about-right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora saepe aliquid soluta praesentium suscipit excepturi accusamus perferendis eligendi voluptas, error nostrum illo fugit reprehenderit tempore facere cumque sed asperiores consequuntur. Alias incidunt, culpa dolor expedita aliquid nostrum.</p>
+      </div>
+    </section>
+      
+    <section class="articles">
+        
+      <div class="articles-header">
+        <h3>Read some of our <b>featured articles</b></h3>
+      </div>
+      
+      <div class="article-items">
+        
+        <article class="article-france">
+          <div class="article-img">
+            <img src="img/sample.jpg" alt="Laptop" />
+            <h6>January'15 <b>South France</b></h6>
+            <button type="button" onclick="#">172 &hearts;</button>
+          </div>
+          <div class="article-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut maiores necessitatibus totam aliquam nisi omnis. Assumenda quisquam laborum quia consequatur esse velit eum distinctio at.</p>
+          </div>
+        </article>
+          
+        <article class="article-america">
+          <div class="article-img">
+            <img src="img/sample3.jpg" alt="Telephone" />
+            <h6>January'15 <b>South America</b></h6>
+            <button type="button" onclick="#">172 &hearts;</button>
+          </div>
+          <div class="article-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur vitae nemo officiis nobis deleniti, similique, iste doloremque quaerat voluptatem officia hic sit magni dolorum maxime?</p>
+          </div>
+        </article>
+          
+        <article class="article-france">
+          <div class="article-img">
+            <img src="img/sample.jpg" alt="Laptop" />
+            <h6>January'15 <b>South France</b></h6>
+            <button type="button" onclick="#">20 &hearts;</button>
+          </div>
+          <div class="article-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nulla enim aperiam provident placeat tempore, consectetur, alias repudiandae error nisi incidunt atque cum facilis perferendis!</p>
+          </div>
+        </article>
+        
+        <article class="article-america">
+          <div class="article-img">
+            <img src="img/sample3.jpg" alt="Telephone" />
+            <h6>January'15 <b>South America</b></h6>
+            <button type="button" onclick="#">150 &hearts;</button>
+          </div>
+          <div class="article-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui fugit ipsa et. Fugiat voluptatem consectetur quibusdam, laboriosam error libero non molestiae ea, tempore aspernatur, molestias.</p>
+          </div>
+        </article>
+      
+      </div>
+      
+      <form class="email-form" action="#">
+        <div class="input-email">
+          <h3>Subscribe to our <b>newsletter</b></h3>
+          <input type="email" placeholder="Enter your e-mail adress">
+          <button type="submit">Subscribe</button>
+        </div>
+      </form>
+      
+    </section>
+    
+  </main>
+    
+  <footer>
+    
+    <div class="footer-column">
+      
+    <div class="column-item">
+      <h4>Black &amp; White</h4>
+      <p>morbi quis metus magna. Maecenas feugiat tristique odio, ac ultrices lacus convallis ut. Aenean elementum purus mi, ut aliquam velit semper id</p>
+    </div>
+      
+    <div class="column-item">
+      <h4>Last Tweet</h4>
+      <p>...donec commodo non erat ut ullamcorper. Integer id sapien nisl. Pellentesque quis turpis et dolor euismod rhoncus. Vestibulum ante massa</p>
+      <p>3 hours ago</p>
+    </div>
+      
+    <div class="column-item">
+      <h4>Contact</h4>
+      <p><a>www.loremipsumdolar.nl</a></p>
+      <p>182 AB Your Street Name</p>
+      <p>e-mail@loremipsum.com</p>
+      <p>+(121)01 23 45 679</p>
+    </div>
+      
+    <div class="column-item">
+      <h4>Newsletter</h4>
+      <p>Etiam cursus ut arcu quis bibendum. Maecenas convallis lacus eu diam luctus.</p>
+      <form class="email-footer" action="#">
+        <input type="email" placeholder="Enter your e-mail adress">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    
+    </div>
+      
+    <hr>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2015 Ruben Stom</p>
+      <div class="footer-nav">
+        <a href="#" class="footer-nav-item">Home</a>
+        <a href="#" class="footer-nav-item">About</a>
+        <a href="#" class="footer-nav-item">Shop</a>
+        <a href="#" class="footer-nav-item">Vacancies</a>
+      </div>
+    </div>
+    
+  </footer>
+
+</body>
+</html>
