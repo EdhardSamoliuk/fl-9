@@ -1,0 +1,194 @@
+/*
+ * Feel free to change name of colors if you need it
+ * Feel free to add new colors if you need it
+ */
+/* :root {
+  --bg-color--dark: #0a1223;
+  --bg-color--light: #fff;
+  --link: #5d5d5d;
+  --link--active: #54597d;
+  --link--hover: #54597d;
+  --article-title: #ddd;
+  --article-title--dark: #000;
+  --thumbnail--description: #5d5d5d; */
+
+  /* These styles are needed only for media query max-width: 575px */
+
+  /* The 'Up' button (circle button at right bottom corner) */
+/*  --btn-color: #fff;
+  --btn-bg-color: #5ebcff;
+
+  --navigation-border-bottom: #ddd;
+  --thumbnail-title: #484747; 
+} */
+
+/* Your styles go here */
+
+body{
+  background-color:#0a1223;
+  font-family:"Arial","Helvetica";
+  font-size:1em;
+  margin:3% 0% 15% 0%;
+}
+
+body,.main-navigation ul{
+  padding:0;
+}
+
+img{
+  max-width:100%;
+}
+
+h1{
+  font-size:5em;
+}
+
+h1,.up-button a{
+  color:#fff;
+}
+
+h3{
+  font-size:2em;
+  background:linear-gradient(to left,#5d5d5d,#ddd);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+p,.main-navigation a{
+  color:#5d5d5d;
+}
+
+p{
+  text-indent:1.5em;
+}
+
+a,.up-button a{
+  font-size:1.25em;
+}
+
+.main-navigation,.up-button a{
+  text-align:right;
+}
+
+.main-navigation{
+  margin-left:2%;
+  margin-right:2%;
+  
+}
+
+.main-navigation ul{
+  list-style:none;
+}
+
+.main-navigation li{
+  padding:2%;
+  display:inline;
+}
+
+.main-navigation a,.up-button a{
+  text-decoration:none;
+}
+
+.main-navigation a:hover,.main-navigation a:visited{
+  color:#54597d;
+}
+
+.page-header,.articles,.up-button{
+  margin-top:15%;
+}
+
+.page-header,.up-button{
+  margin-right:5%;
+}
+
+.page-header{
+  margin-left:5%;
+  text-align:center;
+}
+
+.articles{
+  margin-left:12%;
+  margin-right:12%;
+}
+
+.article-item{
+  display:flex;
+  align-items:center;
+}
+
+.article-item .article-img,.article-item .article-text{
+  flex:50%;
+}
+
+.article-item .article-text p{
+  text-align:justify;
+}
+
+.article-item:nth-child(odd){
+  flex-direction:row-reverse;
+}
+
+.up-button{
+  display:none;
+  position:fixed;
+  bottom:5%;
+  right:2%;
+  z-index:3;
+  padding:5%;
+  background:#5ebcff;
+  border:none;
+  border-radius:50%;
+  box-shadow: 5px 10px 18px #ddd;
+}
+  
+.up-button a{
+  font-weight:bold;
+}
+  
+.up-button:hover{
+  background:#54597d;
+}
+
+@media (max-width:991px){
+  .main-navigation{
+    text-align:center;
+  }
+  
+  .article-item,.article-item:nth-child(odd){
+    flex-direction:column-reverse;
+  }
+}
+
+@media (max-width:575px){
+  body{
+    background-color:#fff;
+    margin:0;
+  }
+  
+  h1{
+    color:#000;
+  }
+  
+  h3{
+    background:none #484747;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  
+  .main-navigation{
+    text-align:left;
+  }
+  
+  .main-navigation li{
+    display:block;
+    border-bottom:1px solid #ddd;
+  }
+  
+  .main-navigation a:hover, .main-navigation a:visited{
+    font-weight:bold;
+  }
+  
+  .up-button{
+    display:inline-block;
+    }
+}
