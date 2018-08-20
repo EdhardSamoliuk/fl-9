@@ -27,10 +27,10 @@ function game() {
         3: 10
     };
     let number = getRandomInt(minN, maxN);
-    console.log(number); //for check the game
     let totalPrize = 0;
     let attempts = 3;
     let possiblePrize = prize[attempts];
+    console.log(number); //for check the game
     for (attempts; attempts > 0; attempts--) {
         let choose = parseInt(yourChoose(minN, maxN, attempts, totalPrize, possiblePrize));
         if (choose === number) {
@@ -53,12 +53,6 @@ function game() {
         }
     }
     if (!attempts) {
-        prize['2'] = 10;
-        prize['1'] = 5;
-        prize['0'] = 2;
-        totalPrize = 0;
-        possiblePrize = 0;
-        attempts = 3;
         newGame(totalPrize);
     }
 }
