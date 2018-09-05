@@ -1,141 +1,148 @@
-disableAddBtn(document.getElementById('action-input'));
-document.getElementById('action-input').setAttribute('onkeyup','disableAddBtn(this)');
+'use strict';
 
-function checkedItem(aCheckbox) {
-    aCheckbox.innerText = 'check_box';
-}
+let list = document.getElementById('listLi'),
+    title = document.getElementById('actionTitle'),
+    newItemBtn = document.getElementById('newAction'),
+    maximum = document.getElementById('maximum'),
+    maxItems = 10;
 
-function deleteItem(aItem) {
-    aItem.parentNode.removeChild(aItem);
-    maximumItem();
-}
-
-function disableAddBtn(aInput) {
-    let addNewActionBtn = document.getElementById('new-action-icon');
-    if (aInput.value === '') {
-        addNewActionBtn.style.color = '#D3D3D3';
-        addNewActionBtn.onclick = null;
+//disabled newItemBtn if input empty
+title.oninput = function () {
+    if (title.value) {
+        newItemBtn.removeAttribute('disabled');
     } else {
-        addNewActionBtn.style.color = '#000';
-        addNewActionBtn.setAttribute('onClick', 'addNewAction()');
+        newItemBtn.setAttribute('disabled', 'true');
     }
 }
 
-function maximumItem() {
-    const actionListMaxLength = 10;
-    let actionsListItems = document.getElementsByClassName('action-item');
-    let newActionInput = document.getElementById('new-action-input');
-    let newActionBtn = document.getElementById('new-action-btn');
-    if(actionsListItems.length >= actionListMaxLength) {
-        let newAction = document.getElementById('new-action');
-        let maximumItemPerList = document.createElement('p');
-        maximumItemPerList.id = 'maxText';
-        maximumItemPerList.innerText = 'Maximum item per list are created';
-        maximumItemPerList.style.display = 'block';
-        maximumItemPerList.style.marginLeft = 'auto';
-        maximumItemPerList.style.marginRight = 'auto';
-        maximumItemPerList.style.color = 'red';
-        newActionInput.style.display = 'none';
-        newActionBtn.style.display = 'none';
-        newAction.appendChild(maximumItemPerList);
+//Add new item
+function addNewItem() {
+    let item = document.createElement('li');
+    let checkBtn = document.createElement('button');
+    let removeBtn = document.createElement('button');
+    let span = document.createElement('span');
+    let checkIcon = document.createElement('i');
+    let deleteIcon = document.createElement('i');
+
+    item.classList.add('li');
+    item.setAttribute('draggable', 'true');
+    removeBtn.classList.add('remove');
+    checkIcon.classList.add('material-icons', 'uncheck');
+    deleteIcon.classList.add('material-icons', 'delete');
+    checkIcon.innerHTML = 'check_box_outline_blank';
+    deleteIcon.innerHTML = 'delete';
+    span.innerHTML = title.value;
+
+    checkBtn.appendChild(checkIcon);
+    removeBtn.appendChild(deleteIcon);
+
+    item.appendChild(checkBtn);
+    item.appendChild(span);
+    item.appendChild(removeBtn);
+    list.appendChild(item);
+    title.value = '';
+    maxItem();
+    newItemBtn.setAttribute('disabled', 'true');
+}
+
+//Inspect count of items
+function maxItem() {
+    let itemList = document.getElementsByTagName('li');
+
+    if (itemList.length === maxItems) {
+        maximum.classList.remove('display-none');
+        title.setAttribute('disabled', 'true');
     } else {
-        newActionInput.style.display = 'flex';
-        document.getElementById('action-input').value = '';
-        newActionBtn.style.display = 'flex';
-       //let maximumItemPerList = document.getElementById('maxText');
-        if (document.getElementById('maxText') !== null){
-            document.getElementById('maxText').style.display = 'none';
-        }
+        maximum.classList.add('display-none');
+        title.removeAttribute('disabled');
     }
 }
 
-let moveItem = null;
-function allowDropItem(ev) {
-    ev.preventDefault();
+//Delete element
+function delItem(e) {
+    e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);
+    maxItem();
 }
 
-function onDragEnter(ev){
-    ev.preventDefault();
-    ev.target.style.opacity = '0.5';
-	}
-	
-function onDragLeave(ev){
-    ev.target.style.opacity = '1';
-	}
+//Draggable functions //magic
+let dragSrcEl = null;
 
-function dragItem(ev) {
-    moveItem = ev.target;
+function handleDragStart(e) {
+    dragSrcEl = this;
+
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', this.outerHTML);
+
+    this.classList.add('dragElem');
 }
 
-function dropItem(ev) {
-    ev.preventDefault();
-    let listNode = document.getElementById('actions-list');
-    let targeteIndex = 0;
-    let moveItemIndex = 0;
-    for (let i=0; i<listNode.childElementCount; i++){
-        if (listNode.childNodes[i] === moveItem){
-            moveItemIndex = i;
-        }
-        if (listNode.childNodes[i] === ev.target.parentNode){
-            targeteIndex = i;
-        }
+function handleDragOver(e) {
+    if (e.preventDefault) {
+        e.preventDefault();
     }
-    if (moveItemIndex > targeteIndex){
-        listNode.insertBefore(moveItem, ev.target.parentNode);
-    } else
-    if (moveItemIndex < targeteIndex){
-        listNode.insertBefore(moveItem, ev.target.parentNode.nextSibling);
-    } else
-    if(ev.target.parentNode === listNode.lastChild) {
-      listNode.appendChild(moveItem);
-    }
-    ev.target.style.opacity = '1';
+    this.classList.add('over');
+
+    e.dataTransfer.dropEffect = 'move';
+
+    return false;
 }
 
-function addNewAction() {
-    let actionsListItems = document.getElementsByClassName('action-item');
-    const actionListMaxLength = 10;
-    if(actionsListItems.length === null || actionsListItems.length < actionListMaxLength) {
-        let actionItem = document.createElement('div');
-        actionItem.setAttribute('class','action-item');
-        actionItem.setAttribute('id','action-item');
-        actionItem.style.display = 'flex';
-        actionItem.style.alignItems = 'center';
-        actionItem.setAttribute('draggable','true'); 
-        actionItem.setAttribute('ondragstart','dragItem(event)');
-        actionItem.setAttribute('ondragover','allowDropItem(event)');
-        actionItem.setAttribute('ondrop','dropItem(event)');
-        actionItem.setAttribute('onDragEnter','onDragEnter(event)');
-        actionItem.setAttribute('onDragLeave','onDragLeave(event)');
-        
-        let actionItemCheckbox = document.createElement('i');
-        actionItemCheckbox.setAttribute('class','material-icons');
-        actionItemCheckbox.innerText = 'check_box_outline_blank';
-        actionItemCheckbox.style.flex = '5%';
-        actionItemCheckbox.style.cursor = 'pointer';
-        actionItemCheckbox.setAttribute('onClick','checkedItem(this)');
-        actionItem.appendChild(actionItemCheckbox);
-        
-        let actionItemText = document.createElement('p');
-        let inputText = document.getElementById('action-input').value;
-        let itemText = document.createTextNode(inputText);
-        actionItemText.appendChild(itemText);
-        actionItem.appendChild(actionItemText);
-        document.getElementById('action-input').value = '';
-        disableAddBtn(document.getElementById('action-input'));
-        actionItemText.style.flex = '90%';
-        actionItemText.style.margin = '0';
-        
-        let actionItemDelete = document.createElement('i');
-        actionItemDelete.setAttribute('class','material-icons');
-        actionItemDelete.innerText = 'delete';
-        actionItemDelete.style.cursor = 'pointer';
-        actionItemDelete.setAttribute('onClick','deleteItem(parentNode)');
-        actionItem.appendChild(actionItemDelete);
-        actionItemDelete.style.flex = '5%';
-        
-        let actionsList = document.getElementById('actions-list');
-        actionsList.appendChild(actionItem);
-    } 
-    maximumItem();
+function handleDragEnter(e) {
+    // this / e.target is the current hover target.
 }
+
+function handleDragLeave(e) {
+    this.classList.remove('over');
+}
+
+function handleDrop(e) {
+    if (e.stopPropagation) {
+        e.stopPropagation();
+    }
+
+    if (dragSrcEl !== this) {
+        this.parentNode.removeChild(dragSrcEl);
+        let dropHTML = e.dataTransfer.getData('text/html');
+        this.insertAdjacentHTML('beforebegin', dropHTML);
+        let dropElem = this.previousSibling;
+        addDnDHandlers(dropElem);
+
+    }
+    this.classList.remove('over');
+    return false;
+}
+
+function handleDragEnd(e) {
+    this.classList.remove('over');
+}
+
+function addDnDHandlers(elem) {
+    elem.addEventListener('dragstart', handleDragStart, false);
+    elem.addEventListener('dragenter', handleDragEnter, false)
+    elem.addEventListener('dragover', handleDragOver, false);
+    elem.addEventListener('dragleave', handleDragLeave, false);
+    elem.addEventListener('drop', handleDrop, false);
+    elem.addEventListener('dragend', handleDragEnd, false);
+
+}
+
+//function for delegate 'click' events for new items
+function panelFunction(innerPanel) {
+    if (innerPanel.target.classList.contains('uncheck')) {
+        innerPanel.target.innerHTML = 'check_box';
+    } else if (innerPanel.target.classList.contains('delete')) {
+        delItem(innerPanel.target);
+    }
+}
+
+//function for delegate 'mousedown' events for new items
+function panelFunction2(innerPanel) {
+    if (event.target.className === 'li') {
+        let cols = document.querySelectorAll('#listLi .li');
+        [].forEach.call(cols, addDnDHandlers);
+    }
+}
+
+window.addEventListener('click', panelFunction);
+list.addEventListener('mousedown', panelFunction2);
+newItemBtn.addEventListener('click', addNewItem);

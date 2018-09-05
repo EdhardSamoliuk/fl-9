@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Homework 11 - TODO Cat List</title>
-  <link rel="stylesheet" href="./assets/material-icons/material-icons.css">
-  <link rel="stylesheet" href="./assets/styles.css">
+    <meta charset="UTF-8">
+    <title>Homework 11 - TODO Cat List</title>
+    <link rel="stylesheet" href="./assets/material-icons/material-icons.css">
+    <link rel="stylesheet" href="./assets/styles.css">
 </head>
+
 <body>
-  <div id="root" class="root">
-    <section class="main">
-        <header>
-          <h1>TODO Cat List</h1>
-        </header>
-        <div class="new-action" id="new-action">
-          <div class="new-action-input" id="new-action-input"><input type="text" placeholder="Add New Action" id="action-input"></div>
-          <div class="new-action-btn" id="new-action-btn"><i class="material-icons" id="new-action-icon">add_box</i></div>
-        </div>
-        <hr>
-        <div id="actions-list" class="actions-list"></div>
-        <footer>
-          <img class="cat-pad" src="assets/img/cat.png"  alt="Cat"/>
-        </footer>
-    </section>
-  </div>
-  <script src="./src/app.js"></script>
+    <div id="root" class="root">
+        <section class="main">
+            <header>
+                <h1>TODO Cat List</h1>
+                <p id="maximum" class="display-none">Maximum item per list are created</p>
+            </header>
+            <div class="add-new">
+                <input class="add-input" id="actionTitle" type="text" placeholder="Add New Action" maxlength="30">
+                <button class="add-btn" id="newAction" disabled><i class="material-icons">add_box</i></button>
+            </div>
+            <ul class="list" id="listLi">
+            
+            </ul>
+            <footer>
+                <img class="cat-pad" src="assets/img/cat.png" alt="Cat Pad">
+            </footer>
+        </section>
+    </div>
+
+    <script src="./src/app.js"></script>
 </body>
 </html>

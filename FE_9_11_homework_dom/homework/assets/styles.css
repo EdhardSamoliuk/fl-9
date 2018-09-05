@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
 .root {
     display: flex;
     justify-content: center;
@@ -11,51 +21,67 @@
     height: 450px;
     border: 1px solid black;
     padding: 10px;
+    /*    display: flex;*/
+    /*    flex-direction: column;*/
+    /*    justify-content: space-between;*/
 }
 
-header, .new-action, .actions-list, footer {
-    margin: 2% 5% 2% 5%;
-    font-family: Arial;
-}
-
-hr {
-    margin: 3% 2% 3% 2%;
-    height: 3px;
-    background-color: #000;
-}
-
-h1 {
+header {
     text-align: center;
+}
+
+header h1 {
     font-weight: normal;
 }
 
-.new-action {
+header p {
+    color: red;
+}
+
+.display-none {
+    display: none;
+}
+
+.add-new {
+    border-bottom: 2px solid black;
+    padding: 10px;
+    /*    margin-bottom: 10px;*/
+    height: 40px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.new-action-input {
-    flex: 95%;
+.add-input {
+    flex-grow: 1;
+    border: 1px solid black;
+    padding: 2px 5px;
 }
 
-.new-action-input input {
-    border: 2px solid #000;
-    width: 95%;
-    padding: 1%;
-}
-
-.new-action-btn {
-    flex: 5%;
+button {
+    background: none;
+    padding: 0;
+    border: 0;
+    display: flex;
+    align-items: center;
     cursor: pointer;
 }
 
-.new-action-btn i {
-    font-size: 3em;
-    vertical-align: middle;
+ul {
+    list-style: none;
+    padding: 10px;
 }
 
-.actions-list {
-    min-height: 300px;
+ul li {
+    display: flex;
+    align-items: center;
+    cursor: move;
+    margin-bottom: 5px;
+/*    user-select: none;*/
+}
+
+.remove {
+    margin-left: auto;
 }
 
 footer {
@@ -68,4 +94,18 @@ footer {
     height: 50px;
     position: absolute;
     bottom: 10px;
+}
+
+[disable] {
+    cursor: not-allowed;
+}
+
+span {
+    margin-left: 5px;
+    user-select: none;
+    pointer-events:none;
+}
+
+.li.over {
+  border-top: 2px solid black;
 }
