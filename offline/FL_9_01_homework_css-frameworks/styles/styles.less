@@ -1,0 +1,70 @@
+@import "variables";
+
+//text color
+.text-primary {
+  color: @blue !important;
+}
+
+//bg colors
+.bg-primary {
+    background-color: @blue  !important;
+}
+
+.bg-secondary {
+    background-color: @grey  !important;
+}
+
+.bg-success {
+    background-color: @green  !important;
+}
+
+.bg-danger {
+    background-color: @red  !important;
+}
+
+.bg-warning {
+    background-color: @orange  !important;
+}
+
+//border colors
+.border-primary {
+    background-color: @blue  !important;
+}
+
+.border-success {
+    background-color: @green  !important;
+}
+
+.border-danger {
+    background-color: @red  !important;
+}
+
+.border-warning {
+    background-color: @orange  !important;
+}
+
+//navbar active
+.navbar {
+  border-bottom: 1px solid gainsboro;
+
+  .nav-link {
+    padding: 10px;
+  }
+
+  .active {
+    .nav-link {
+      background-color: @blue;
+      color: white !important;
+    }
+  }
+
+  @media (min-width: 992px) {
+    & {
+      padding: 0;
+    }
+
+    .navbar-nav .nav-link {
+      padding: 15px 20px;
+    }
+  }
+}
