@@ -87,7 +87,7 @@ function ShoppingCart(name, owner, maxCount) {
                 product.add(this);
                 _logs.push(`${product.name} was added to ${this.shoppingCartName} on ${product['dateOfAddToCart']}`);
             } else {
-                console.error(`You cant do this. This is not your ${this.name}`);
+                console.error(`You cant do this. This is not your ${product.name}`);
             }
         } else {
             console.error('Please try to add Product instance');
