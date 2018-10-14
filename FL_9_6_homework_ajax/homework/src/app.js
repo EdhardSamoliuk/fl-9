@@ -20,11 +20,11 @@ const http = {
             };
             xhr.onerror = function (error) {
                 reject(error);
-            }
+            };
             xhr.send();
-        })
+        });
     }
-}
+};
 
 //Task2
 track.addEventListener('click', function () {
@@ -45,8 +45,8 @@ track.addEventListener('click', function () {
         .catch(error => {
             answer.classList.add('display');
             console.error(error);
-        })
-})
+        });
+});
 
 function animation(event) {
     answer.className = 'answer display';
