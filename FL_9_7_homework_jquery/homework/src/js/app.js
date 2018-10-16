@@ -87,7 +87,11 @@ function createModal(user, objects, id) {
 
     $('.closeModal').on('click', () => $($modalWindow).remove());
     
-//    $('body').on('click', '#myModal', () => $($modalWindow).remove());
+    $('html').keydown(function (e) {
+        if (e.keyCode == 27) {
+            $($modalWindow).remove()
+        }
+    });
 
     function change() {
         $($modalWindow).remove();
