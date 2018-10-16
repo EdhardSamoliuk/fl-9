@@ -90,7 +90,7 @@ function createModal(user, objects, id) {
     $('html').keydown(function (e) {
         if (e.keyCode == 27) {
             $($modalWindow).remove()
-        }
+        };
     });
 
     function change() {
